@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import HeroList from './Components/HeroList'
+import SearchHeroes from './Components/SearchHeroes'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import HeroDetails from './Components/HeroDetails'
+import { useParams } from 'react-router-dom'
 
 function App() {
+  const ParaData = [
+    {
+      title: 'Email',
+      type: 'text',
+    },
+    {
+      title: 'Phone',
+      type: 'text',
+    },
+    {
+      title: 'Name',
+      type: 'text',
+    },
+    {
+      title: 'Company',
+      type: 'text',
+    },
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<HeroList />} />
+          <Route
+            path='/SearchHeroes'
+            element={<SearchHeroes ParaData={ParaData} />}
+          />
+          <Route
+            path='/heroes/:title'
+            element={<HeroDetails ParaData={ParaData} />}
+          />
+        </Routes>
+      </Router>
+    </>
+  )
 }
 
-export default App;
+export default App
