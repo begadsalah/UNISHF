@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 const HeroDetails = ({ ParaData }) => {
   return (
     <>

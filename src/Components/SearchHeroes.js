@@ -145,7 +145,7 @@ const SearchHeroes = ({ ParaData }) => {
       </Navbar>
       <br />
       <Container>
-        <Row xs={10} md={10} lg={10}>
+        <Row xs={12} md={12} lg={12}>
           <HeroTableList data={search(data)} />
         </Row>
       </Container>
