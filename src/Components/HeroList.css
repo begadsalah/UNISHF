@@ -22,10 +22,8 @@ body.modal-open {
 }
 .offcanvas-body {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding: 2rem !important;
 }
 
 .checkboxes-div {
